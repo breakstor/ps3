@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل بلايستيشن 3 (PS3 Mod)</title>
+    <style>
+        /* 🎨 CSS المدمج */
+
+        /* إعدادات عامة */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* لمنع ظهور أشرطة التمرير إذا تجاوزت الصورة الحجم */
+        }
+
+        /* 🖼️ خلفية الصفحة (الصورة بالحجم الكامل) */
+        .full-background {
+            background-image: url('host.jpg'); /* **مهم:** استبدل هذا المسار بمسار صورتك */
+            background-size: cover; /* لضمان تغطية الصورة للخلفية بالكامل */
+            background-position: center; /* لتوسيط الصورة */
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh; /* تحديد ارتفاع الشاشة بالكامل */
+            display: flex;
+            flex-direction: column; /* لتوجيه العناصر عموديًا (النص ثم الزر) */
+            justify-content: center; /* توسيط عمودي للمحتوى */
+            align-items: center; /* توسيط أفقي للمحتوى */
+            text-align: center;
+        }
+
+        /* 📝 تصميم النص العلوي */
+        .header-text {
+            color: #ffffff; /* لون النص أبيض ليبرز على الخلفية */
+            font-size: 32px; /* حجم الخط كبير */
+            font-weight: bold;
+            margin-bottom: 30px; /* مسافة أسفل النص قبل الزر */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* ظل للنص لتحسين وضوحه */
+            padding: 10px 20px; /* إضافة بعض الحشوة حول النص */
+            background-color: rgba(0, 0, 0, 0.4); /* خلفية شبه شفافة للنص */
+            border-radius: 10px; /* حواف مستديرة للخلفية */
+        }
+
+        /* 🔘 تصميم الزر المحدث */
+        .action-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff; /* لون النص أبيض */
+            background-color: #007bff; /* **تغيير اللون إلى الأزرق** */
+            border: none;
+            border-radius: 50px; /* الأطراف الدائرية */
+            text-decoration: none; /* إزالة خطوط التسطير من الرابط */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تأثيرات الانتقال */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ظل ناعم للزر */
+        }
+
+        /* تأثير عند مرور مؤشر الفأرة على الزر */
+        .action-button:hover {
+            background-color: #0056b3; /* لون أزرق أغمق عند المرور */
+            transform: scale(1.05); /* تكبير الزر قليلاً */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* زيادة حدة الظل عند المرور */
+        }
+
+        /* تأثير عند الضغط على الزر */
+        .action-button:active {
+            transform: scale(0.98); /* تصغير الزر قليلاً لإظهار حالة الضغط */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* تقليل الظل عند الضغط */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="full-background">
+        <div class="header-text">
+            هوست تعديل بلايستيشن 3 مقدم من  متجر بريك ستور
+        </div>
+
+        <a href="C:\Users\Break Store\Desktop\New folder\hen492" class="action-button">
+            إضغط هنا لتعديل جهازك
+        </a>
+    </div>
+
+</body>
+</html>
