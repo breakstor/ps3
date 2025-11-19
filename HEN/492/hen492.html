@@ -1,10 +1,10 @@
-<title>Auto HEN Installer 4.92 By Break Store</title>
+<title>Auto HEN Installer 4.92 Arabic Host</title>
 <link rel="stylesheet" href="style.css">
 <center>
-<h1><span style='color:#c18f06'> جاري التثبيت التلقائي للهين </span></h1>
-<h1><span style='color:black'>في حالة فشل التثبيت تأكد من اصدار السوفتوير لديك وقم بضبط الزمن وحاول مجدد</span></h1>
-<h1><span style='color:black'>HFW التعديل يعمل على اصدار 4.92</span></h1>
-<hr><span style='color:black'>للمزيد من المنتجات تابع متجر بريك ستور </span></h1>
+<h1><span style='color:blue'>Auto HEN Installer HFW 4.92</span></h1>
+<h1><span style='color:black'>Thanks evilnat, zecoxao, DeViL303, xps3riments, aldostools, and PS3Xploit Team for their work used or hosted here.</span></h1>
+<h1><span style='color:black'>HEN 3.3.0 FIX Multistore included</span></h1>
+<hr><span style='color:black'>by Islam Fayed  Thanks PSX Place for tools and knowledge, without them this would not be possible</span></h1>
 <div id="result"></div>
 <div id="exploit"></div>
 <div id="trigger" style="display: none;"></div>
@@ -358,7 +358,7 @@ function initROP(init)
 		if((j2===jump_2)&&(j1===jump_1)&&(x===xtra_data)&&(sf===stack_frame))
 		{
 			if(t_out!==0){clearTimeout(t_out);}
-			showMsg('<h2>جاري تحميل الهين ...</h2>');
+			showMsg('<h2>Downloading HEN...</h2>');
 			window.location.href = 'SETUP.P3T';
 			setTimeout(listener,1500);
 		}
@@ -377,7 +377,7 @@ function listener()
 	var myListener = function ()
 	{
 		document.removeEventListener('mousemove', myListener, false);
-		showMsg('<h2>جاري تثبيت الهين ... سيتم اعادة تشغيل الجهاز</h2>');
+		showMsg('<h2>Installing HEN, please wait for reboot...</h2>');
 		triggerX();
 	};
 	document.addEventListener('mousemove', myListener, false);
@@ -391,7 +391,7 @@ function triggerX()
 }
 function HFWmsg()
 {
-	showMsg("<h2><span style='color:red'>فشل التثبيت , تأكد من اصدار جهازك وحاول مجدد</h2></span>");
+	showMsg("<h2><span style='color:red'>Make sure you have Firmware (HFW) 4.92 installed on your console before using this!</h2></span>");
 	throw new Error('');
 }
 if(fwv=="4.92"){initROP(true)}else{HFWmsg()}
