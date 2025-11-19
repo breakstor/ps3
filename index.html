@@ -1,89 +1,302 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعديل بلايستيشن 3 (PS3 Mod)</title>
-    <style>
-        /* 🎨 CSS المدمج */
+	<title>PS3 Hen 4.92</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<style type="text/css">body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-image: url("image.png");
+}
+.container {
+    margin: 10px auto;
+    width: 30%;
+}
 
-        /* إعدادات عامة */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            overflow: hidden; /* لمنع ظهور أشرطة التمرير إذا تجاوزت الصورة الحجم */
-        }
+/* general styles */
+.menu, .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu {
+    height: 58px;
+}
+.menu li {
+    background: -moz-linear-gradient(#292929, #252525);
+    background: -ms-linear-gradient(#292929, #252525);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #292929), color-stop(100%, #252525));
+    background: -webkit-linear-gradient(#292929, #252525);
+    background: -o-linear-gradient(#292929, #252525);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525')";
+    background: linear-gradient(#ffffff, #ffffff);
 
-        /* 🖼️ خلفية الصفحة (الصورة بالحجم الكامل) */
-        .full-background {
-            background-image: url('host.jpg'); /* **مهم:** استبدل هذا المسار بمسار صورتك */
-            background-size: cover; /* لضمان تغطية الصورة للخلفية بالكامل */
-            background-position: center; /* لتوسيط الصورة */
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100vh; /* تحديد ارتفاع الشاشة بالكامل */
-            display: flex;
-            flex-direction: column; /* لتوجيه العناصر عموديًا (النص ثم الزر) */
-            justify-content: center; /* توسيط عمودي للمحتوى */
-            align-items: center; /* توسيط أفقي للمحتوى */
-            text-align: center;
-        }
+    border-bottom: 2px solid #ff0000;
+    border-top: 2px solid #ffffff;
+    min-width: 100px;
+}
+.menu > li {
+    display: block;
+    float: inline-start;
+    position:relative;
+}
+.menu > li:first-child {
+    border-radius: 5px 0 0;
+}
+.menu a {
+    border-left: 20px solid rgba(192, 11, 11, 0);
+    color: #ff0000;
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 100px;
+    padding: 0 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
-        /* 📝 تصميم النص العلوي */
-        .header-text {
-            color: #ffffff; /* لون النص أبيض ليبرز على الخلفية */
-            font-size: 32px; /* حجم الخط كبير */
-            font-weight: bold;
-            margin-bottom: 30px; /* مسافة أسفل النص قبل الزر */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* ظل للنص لتحسين وضوحه */
-            padding: 10px 20px; /* إضافة بعض الحشوة حول النص */
-            background-color: rgba(0, 0, 0, 0.4); /* خلفية شبه شفافة للنص */
-            border-radius: 10px; /* حواف مستديرة للخلفية */
-        }
+/* onhover styles */
+.menu li:hover {
+    background-color: #1c1c1c;
+    background: -moz-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -ms-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c1c1c), color-stop(100%, #1b1b1b));
+    background: -webkit-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -o-linear-gradient(#1c1c1c, #1b1b1b);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
+    background: linear-gradient(#1c1c1c, #1b1b1b);
 
-        /* 🔘 تصميم الزر المحدث */
-        .action-button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff; /* لون النص أبيض */
-            background-color: #007bff; /* **تغيير اللون إلى الأزرق** */
-            border: none;
-            border-radius: 50px; /* الأطراف الدائرية */
-            text-decoration: none; /* إزالة خطوط التسطير من الرابط */
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تأثيرات الانتقال */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ظل ناعم للزر */
-        }
+    border-bottom: 2px solid #222222;
+    border-top: 2px solid #1B1B1B;
+}
+.menu li:hover > a {
+    border-radius: 5px 0 0 0;
+    border-left: 3px solid #3c3c3c;
+    color: #f2f2f2;
+}
 
-        /* تأثير عند مرور مؤشر الفأرة على الزر */
-        .action-button:hover {
-            background-color: #0056b3; /* لون أزرق أغمق عند المرور */
-            transform: scale(1.05); /* تكبير الزر قليلاً */
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* زيادة حدة الظل عند المرور */
-        }
+/* submenu styles */
+.submenu {
+    left: 3;
+    max-height: 3;
+    position: relative;
+    top: 100%;
+    z-index: 0;
 
-        /* تأثير عند الضغط على الزر */
-        .action-button:active {
-            transform: scale(0.98); /* تصغير الزر قليلاً لإظهار حالة الضغط */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* تقليل الظل عند الضغط */
-        }
-    </style>
+    -webkit-perspective: 400px;
+    -moz-perspective: 400px;
+    -ms-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+}
+.submenu li {
+    opacity: 0;
+
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+
+    -webkit-transition: opacity .4s, -webkit-transform .5s;
+    -moz-transition: opacity .4s, -moz-transform .5s;
+    -ms-transition: opacity .4s, -ms-transform .5s;
+    -o-transition: opacity .4s, -o-transform .5s;
+    transition: opacity .4s, transform .5s;
+}
+.menu .submenu li:hover a {
+    border-left: 3px solid #454545;
+    border-radius: 0;
+    color: #ffffff;
+}
+.menu > li:hover .submenu, .menu > li:focus .submenu {
+    max-height: 2000px;
+    z-index: 10;
+}
+.menu > li:hover .submenu li, .menu > li:focus .submenu li {
+    opacity: 1;
+
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+/* CSS3 delays for transition effects */
+.menu li:hover .submenu li:nth-child(1) {
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    -ms-transition-delay: 0ms;
+    -o-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+.menu li:hover .submenu li:nth-child(2) {
+    -webkit-transition-delay: 50ms;
+    -moz-transition-delay: 50ms;
+    -ms-transition-delay: 50ms;
+    -o-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+.menu li:hover .submenu li:nth-child(3) {
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.menu li:hover .submenu li:nth-child(4) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+.menu li:hover .submenu li:nth-child(5) {
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+.menu li:hover .submenu li:nth-child(6) {
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+    -ms-transition-delay: 250ms;
+    -o-transition-delay: 250ms;
+    transition-delay: 250ms;
+}
+.menu li:hover .submenu li:nth-child(7) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.menu li:hover .submenu li:nth-child(8) {
+    -webkit-transition-delay: 350ms;
+    -moz-transition-delay: 350ms;
+    -ms-transition-delay: 350ms;
+    -o-transition-delay: 350ms;
+    transition-delay: 350ms;
+}
+.menu li:hover .submenu li:nth-child(9) {
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+      
+.submenu li:nth-child(1) {
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+.submenu li:nth-child(2) {
+    -webkit-transition-delay: 350ms;
+    -moz-transition-delay: 350ms;
+    -ms-transition-delay: 350ms;
+    -o-transition-delay: 350ms;
+    transition-delay: 350ms;
+}
+.submenu li:nth-child(3) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.submenu li:nth-child(4) {
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+    -ms-transition-delay: 250ms;
+    -o-transition-delay: 250ms;
+    transition-delay: 250ms;
+}
+.submenu li:nth-child(5) {
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+.submenu li:nth-child(6) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+.submenu li:nth-child(7) {
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.submenu li:nth-child(8) {
+    -webkit-transition-delay: 50ms;
+    -moz-transition-delay: 50ms;
+    -ms-transition-delay: 50ms;
+    -o-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+.submenu li:nth-child(9) {
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    -ms-transition-delay: 0ms;
+    -o-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+	</style>
 </head>
-<body>
+<body class="bg">
+<div class="container" id="main" role="main">
+<ul class="menu">
+    <li><a href="s3">Store</a>
+    <ul class="submenu">
+        <li><a href="https://archive.org/download/15.280-licencias_202403/15.280_Licencias.pkg"> Licencias File</a></li>
+        <li><a href="https://archive.org/download/infotec-fix.-4.0/InfotecFix.%204.0.pkg">InfotecFix</a></li>
+        <li><a href="https://archive.org/download/fix-end/FixEnd.pkg">Fix End</a></li>
+        <li><a href="https://archive.org/download/fix_20240325/Fix.pkg">Fix</a></li>
+        <li><a href="https://archive.org/download/darking-store-v-4.1/Darking%20Store%20V4.1.pkg">Darking Store</a></li>
+        <li><a href="https://archive.org/download/zuko-store-fix/ZukoSToreFix.pkg">Zuko Fix</a></li>
+        <li><a href="https://archive.org/download/wep-store/WepStore.pkg">Wep Store</a></li>
+        <li><a href="https://archive.org/download/infotec.-store.-4.0-psn/Infotec.%20Store.%204.0%20-%20PSN%20.pkg">Infotec Store</a></li>
+        <li><a href="https://archive.org/download/wiki-store/WikiStore.pkg">Wiki Store</a></li>
+        <li><a href=""></a></li>
 
-    <div class="full-background">
-        <div class="header-text">
-            هوست تعديل بلايستيشن 3 مقدم من  متجر بريك ستور
-        </div>
 
-        <a href="./HEN/492/hen492.html" class="action-button">
-            إضغط هنا لتعديل جهازك
-        </a>
-    </div>
 
+    </ul>
+        
+
+    </li>
+	<li><a href="#s1">PS3 4.92</a>
+	<ul class="submenu">
+		<li><a href="./HEN/492/hen492.html">AUTO HEN INSTALLER</a></li>
+		<li><a href="https://www.mediafire.com/file/p5mpbfpq0nyfx4o/HFW_4.92.PUP/file">HFW 4.92</a></li>
+	</ul>
+	</li>
+	<li><a href="#s2">Program PKG</a>
+	<ul class="submenu">
+        <li><a href="https://archive.org/download/multi-man-4.82.00-hen/multiMAN%204.82.00%20HEN.pkg">MULTIMAN</a></li>
+        <li><a href="https://github.com/aldostools/webMAN-MOD/releases/download/1.47.46/webMAN_MOD_1.47.46_Installer.pkg">WEBMAN</a></li>
+		<li><a href="https://archive.org/download/apollo-ps3_202403/apollo-ps3.pkg">APOLLO SAVE</a></li>
+		<li><a href="https://archive.org/download/pkgi-1.2.0/pkgi%201.2.0.pkg">PKGI</a></li>
+
+    </ul>
+
+    </li>
+    </ul>
+</ul>
+</div>
 </body>
 </html>
